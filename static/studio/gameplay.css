@@ -1,0 +1,112 @@
+/* Gameplay destacado fuera de la galería general */
+.gameplay-feature {
+  color: var(--paper);
+  background: #222328;
+  padding-top: clamp(6rem, 9vw, 9rem);
+  padding-bottom: clamp(6rem, 9vw, 9rem);
+  scroll-margin-top: 2rem;
+}
+
+.gameplay-head {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(3rem, 7vw, 8rem);
+  align-items: end;
+  margin-bottom: clamp(3rem, 6vw, 5.5rem);
+}
+
+.gameplay-head h2 {
+  margin-bottom: 0;
+  color: #fff;
+}
+
+.gameplay-intro > p {
+  max-width: 540px;
+  margin: 0 0 2rem;
+  color: #c7c5bf;
+  line-height: 1.72;
+}
+
+.gameplay-intro b { color: #fff; }
+
+.gameplay-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid #505158;
+  border-bottom: 1px solid #505158;
+}
+
+.gameplay-meta span {
+  padding: 1rem .75rem 1rem 0;
+  color: #fff;
+  font: 500 .68rem/1.45 var(--mono);
+}
+
+.gameplay-meta small {
+  display: block;
+  margin-bottom: .35rem;
+  color: var(--acid);
+  font: inherit;
+  font-size: .58rem;
+}
+
+.gameplay-stage { margin: 0; }
+
+.gameplay-frame {
+  position: relative;
+  padding: clamp(.7rem, 1.5vw, 1.15rem);
+  background: #111216;
+  border: 1px solid #56575d;
+  box-shadow: 18px 20px 0 var(--coral);
+}
+
+.gameplay-player {
+  display: block;
+  width: 100%;
+  max-height: min(78vh, 820px);
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #090a0d;
+}
+
+.gameplay-stamp {
+  position: absolute;
+  z-index: 2;
+  top: 2rem;
+  left: 2rem;
+  padding: .65rem .8rem;
+  color: var(--ink);
+  background: var(--acid);
+  font: 500 .62rem var(--mono);
+  letter-spacing: .04em;
+  pointer-events: none;
+}
+
+.gameplay-stage figcaption {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  color: #aaa9a5;
+  font-size: .82rem;
+  line-height: 1.65;
+}
+
+.gameplay-stage figcaption span {
+  color: var(--acid);
+  font: 500 .65rem var(--mono);
+}
+
+.gameplay-stage figcaption p { max-width: 630px; margin: 0; }
+
+@media (max-width: 800px) {
+  .gameplay-head { grid-template-columns: 1fr; }
+  .gameplay-meta { grid-template-columns: 1fr; }
+  .gameplay-meta span + span { border-top: 1px solid #505158; }
+  .gameplay-stage figcaption { grid-template-columns: 1fr; gap: .6rem; }
+}
+
+@media (max-width: 520px) {
+  .gameplay-frame { box-shadow: 8px 10px 0 var(--coral); }
+  .gameplay-stamp { top: 1.2rem; left: 1.2rem; font-size: .52rem; }
+}

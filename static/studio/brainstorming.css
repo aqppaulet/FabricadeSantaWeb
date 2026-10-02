@@ -1,0 +1,193 @@
+/* Proceso de ideación de Fábrica de Navidad */
+.ideation {
+  background: #f0ebdf;
+  color: var(--ink);
+  padding-top: clamp(6rem, 9vw, 9rem);
+  scroll-margin-top: 2rem;
+}
+
+.ideation-head {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 4rem;
+  align-items: end;
+  padding-bottom: clamp(4rem, 7vw, 6.5rem);
+}
+
+.ideation-head > p {
+  max-width: 430px;
+  margin: 0 0 .5rem;
+  color: #52534f;
+  font-size: 1.05rem;
+  line-height: 1.72;
+}
+
+.ideation-round {
+  display: grid;
+  grid-template-columns: minmax(280px, .65fr) minmax(0, 1.35fr);
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: center;
+  padding-top: clamp(5rem, 8vw, 8rem);
+  padding-bottom: clamp(5rem, 8vw, 8rem);
+  border-top: 1px solid #bdb8ae;
+}
+
+.ideation-copy h3 {
+  margin: 0 0 1.8rem;
+  font: 600 clamp(2rem, 3.3vw, 3.8rem)/1.05 var(--display);
+  letter-spacing: -.08em;
+}
+
+.ideation-copy > p:not(.ideation-step) {
+  max-width: 570px;
+  color: #555650;
+  line-height: 1.72;
+}
+
+.ideation-step {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin: 0 0 1.7rem;
+  font: 500 .68rem var(--mono);
+  letter-spacing: .05em;
+}
+
+.ideation-step span {
+  display: inline-grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: var(--mint);
+}
+
+.idea-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-top: 2.2rem;
+}
+
+.idea-tags span {
+  padding: .55rem .72rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font: 500 .62rem var(--mono);
+}
+
+.ideation-figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.ideation-image-frame {
+  position: relative;
+  padding: clamp(.65rem, 1.3vw, 1rem);
+  background: #fff;
+  border: 1px solid rgba(23, 25, 28, .2);
+  box-shadow: 16px 18px 0 var(--mint);
+}
+
+.ideation-image-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.ideation-label {
+  position: absolute;
+  z-index: 2;
+  top: -.9rem;
+  left: 1.3rem;
+  padding: .58rem .78rem;
+  background: var(--ink);
+  color: #fff;
+  font: 500 .62rem var(--mono);
+  letter-spacing: .05em;
+  box-shadow: 4px 4px 0 var(--coral);
+}
+
+.ideation-figure figcaption {
+  margin-top: 1.5rem;
+  color: #686862;
+  font: .65rem/1.6 var(--mono);
+}
+
+.ideation-figure figcaption b {
+  color: #bf4b31;
+  font-weight: 500;
+}
+
+.ideation-winner {
+  background: #222328;
+  color: var(--paper);
+  border-color: #4a4b50;
+}
+
+.ideation-winner .ideation-step span {
+  background: var(--acid);
+  color: var(--ink);
+  border-color: var(--acid);
+}
+
+.ideation-winner .ideation-copy > p:not(.ideation-step) { color: #c7c5bf; }
+
+.winner-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  margin: 0 0 1.4rem;
+  padding: .58rem .8rem;
+  background: var(--coral);
+  color: var(--ink);
+  font: 600 .66rem var(--mono);
+  transform: rotate(-1deg);
+}
+
+.winner-mark span { font-size: .9rem; }
+
+.winner-features {
+  list-style: none;
+  padding: 0;
+  margin: 2.4rem 0 0;
+  border-top: 1px solid #4a4b50;
+}
+
+.winner-features li {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: .8rem;
+  padding: .9rem 0;
+  border-bottom: 1px solid #4a4b50;
+  color: #b9b7b2;
+  font-size: .82rem;
+  line-height: 1.5;
+}
+
+.winner-features b {
+  color: var(--acid);
+  font: 500 .67rem var(--mono);
+}
+
+.ideation-winner .ideation-image-frame { box-shadow-color: var(--coral); }
+.winner-label { background: var(--acid); color: var(--ink); }
+.ideation-winner .ideation-figure figcaption { color: #aaa9a5; }
+.ideation-winner .ideation-figure figcaption b { color: var(--acid); }
+
+@media (max-width: 900px) {
+  .ideation-head,
+  .ideation-round { grid-template-columns: 1fr; }
+  .ideation-head { gap: 2rem; }
+  .ideation-copy { max-width: 680px; }
+}
+
+@media (max-width: 520px) {
+  .ideation-image-frame,
+  .ideation-winner .ideation-image-frame { box-shadow: 8px 10px 0 var(--mint); }
+  .ideation-winner .ideation-image-frame { box-shadow-color: var(--coral); }
+  .winner-features li { grid-template-columns: 68px 1fr; }
+  .ideation-label { left: .7rem; }
+}

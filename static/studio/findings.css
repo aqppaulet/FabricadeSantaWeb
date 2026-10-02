@@ -1,0 +1,126 @@
+/* Hallazgos de las pruebas de jugabilidad */
+.playtest-findings {
+  color: var(--ink);
+  background: var(--acid);
+  padding-top: clamp(6rem, 9vw, 9rem);
+  padding-bottom: clamp(6rem, 9vw, 9rem);
+  scroll-margin-top: 2rem;
+}
+
+.findings-head {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: clamp(4rem, 7vw, 7rem);
+}
+
+.findings-head h2 {
+  margin-bottom: 0;
+  color: var(--ink);
+}
+
+.findings-intro > p:first-child {
+  max-width: 430px;
+  margin: 0 0 1.3rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.findings-note {
+  display: flex;
+  align-items: flex-start;
+  gap: .65rem;
+  max-width: 430px;
+  margin: 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ink);
+  font: .62rem/1.55 var(--mono);
+  text-transform: uppercase;
+}
+
+.findings-note span { font-size: 1rem; }
+
+.findings-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--ink);
+}
+
+.finding-item {
+  display: grid;
+  grid-template-columns: 58px minmax(260px, .9fr) minmax(300px, 1.1fr);
+  gap: clamp(1.5rem, 4vw, 4.5rem);
+  align-items: start;
+  padding: clamp(2rem, 4vw, 3.6rem) 0;
+  border-bottom: 1px solid var(--ink);
+}
+
+.finding-number {
+  display: grid;
+  place-items: center;
+  width: 2.8rem;
+  aspect-ratio: 1;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper);
+  font: 500 .65rem var(--mono);
+}
+
+.finding-problem > span,
+.finding-solution > span {
+  display: block;
+  margin-bottom: .85rem;
+  font: 500 .61rem var(--mono);
+  letter-spacing: .04em;
+}
+
+.finding-problem h3 {
+  margin: 0 0 1rem;
+  font: 600 clamp(1.45rem, 2.2vw, 2.35rem)/1.05 var(--display);
+  letter-spacing: -.07em;
+}
+
+.finding-problem blockquote {
+  max-width: 540px;
+  margin: 0;
+  color: #3f423d;
+  font-size: .92rem;
+  font-style: italic;
+  line-height: 1.65;
+}
+
+.finding-solution {
+  min-height: 100%;
+  padding: 1.25rem 1.4rem;
+  background: rgba(240, 235, 223, .74);
+  border-left: 5px solid var(--coral);
+}
+
+.finding-solution > span { color: #a9402b; }
+
+.finding-solution p {
+  max-width: 570px;
+  margin: 0;
+  font-size: .92rem;
+  line-height: 1.7;
+}
+
+.finding-solution b {
+  font-family: var(--mono);
+  font-size: .83em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .findings-head { grid-template-columns: 1fr; gap: 2rem; }
+  .finding-item { grid-template-columns: 52px 1fr; }
+  .finding-solution { grid-column: 2; }
+}
+
+@media (max-width: 560px) {
+  .finding-item { grid-template-columns: 1fr; gap: 1.2rem; }
+  .finding-number { width: 2.5rem; }
+  .finding-solution { grid-column: auto; }
+}
